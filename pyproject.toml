@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sec-form4-parser"
+version = "0.1.0"
+description = "A clean, typed Python parser for SEC Form 4 insider-trading XML filings."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Efecan Biskin", email = "efebskn@gmail.com" }]
+requires-python = ">=3.9"
+keywords = ["sec", "edgar", "form 4", "insider trading", "finance", "xml"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Topic :: Text Processing :: Markup :: XML",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+form4 = "sec_form4_parser.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/efebiskin/sec-form4-parser"
+Issues = "https://github.com/efebiskin/sec-form4-parser/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
